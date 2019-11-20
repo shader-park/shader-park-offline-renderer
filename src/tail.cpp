@@ -6,9 +6,12 @@ int main() {
     float wf = static_cast<float>(img_width);
     float hf = static_cast<float>(img_height);
 
+    std::cout << "Resolution: " << img_width << "x" << img_height << "\n";
+
     for (int xp = 0; xp<img_width; xp++) {
-        std::cout << '\r' << xp << " / " << img_width << std::flush;
-        //std::cout << "line done";
+        std::cout << std::fixed << std::setprecision(3) << '\r' << (100.0f*xp)/ (1.0f*img_width) << "%" << std::flush;
+        // show fraction of lines done
+        // std::cout << '\r' << xp << " / " << img_width << std::flush;
         for (int yp = 0; yp<img_height; yp++) {
 
             vec3 rayOrigin = vec3(0.0f,0.0f,-1.5f);
