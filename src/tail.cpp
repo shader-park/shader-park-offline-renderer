@@ -40,7 +40,7 @@ int main() {
     }
 
     save_image(img, img_width, img_height, "../output/test-render", 0);
-
     delete[] img;
+    std::cout << "\n";
     return 0;
 }
