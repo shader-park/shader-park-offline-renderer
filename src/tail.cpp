@@ -7,7 +7,7 @@ int main() {
     float hf = static_cast<float>(img_height);
 
     std::cout << "Resolution: " << img_width << "x" << img_height << "\n";
-
+    #pragma omp parallel for
     for (int xp = 0; xp<img_width; xp++) {
         std::cout << std::fixed << std::setprecision(3) << '\r' << (100.0f*xp)/ (1.0f*img_width) << "%" << std::flush;
         // show fraction of lines done
